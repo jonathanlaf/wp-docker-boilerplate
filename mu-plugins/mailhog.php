@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name:       Mail Interceptor with Mailhog
- * Plugin URI:        https://example.com/plugins/the-basics/
  * Description:       Intercept email with Mailhog. This plugins is part of WP & Docker Boilerplate
  * Version:           0.0.1
  * Author:            Jonathan Lafleur
