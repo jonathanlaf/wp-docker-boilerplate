@@ -15,7 +15,11 @@ services:
   wordpress:
     depends_on:
       - mysql
-    image: wordpress:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: latest-wordpress-xdebug
+    container_name: latest-wordpress-xdebug
     volumes: 
       - ./src:/var/www/html
       - ./mu-plugins:/var/www/html/wp-content/mu-plugins
@@ -28,6 +32,7 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
       TZ: America/Toronto
+      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
   adminer:
     depends_on:
       - mysql
