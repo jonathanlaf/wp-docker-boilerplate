@@ -4,6 +4,8 @@ Hi! I'm Jonathan Lafleur and I decided that I would share little gems that I cre
 
 You'll find in this repo my actual boilerplate that I use to develop WordPress **plugins** & **themes**. It use docker-compose to manage **wordpress (with xdebug)** + **mysql** + **adminer** & **mailhog**.
 
+If also support `host.docker.internal` on a linux host.
+
 ## How to use
     docker-compose up
 * WordPress: http://localhost:8080
