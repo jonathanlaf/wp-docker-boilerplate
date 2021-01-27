@@ -2,7 +2,7 @@
 
 Hi! I'm Jonathan Lafleur and I decided that I would share little gems that I create for my clients that help me develop project for them.  
 
-You'll find in this repo my actual boilerplate that I use to develop WordPress **plugins** & **themes**. It use docker-compose to manage **wordpress** + **mysql** + **adminer** & **mailhog**.
+You'll find in this repo my actual boilerplate that I use to develop WordPress **plugins** & **themes**. It use docker-compose to manage **wordpress (with xdebug)** + **mysql** + **adminer** & **mailhog**.
 
 ## How to use
     docker-compose up
@@ -10,15 +10,10 @@ You'll find in this repo my actual boilerplate that I use to develop WordPress *
 * Adminer: http://localhost:9090
 * Mailhog: http://localhost:8025
 
-## Configuration
-All the configuration reside in **docker-compose.yml** all you need to configure if needed is the environment variables 
+## Services Configuration
+All the configuration reside in the **.env** file. if you want to disable wp-debug, remove the key, wordpress image only verify if the key exist and not the value.
 
-* MYSQL_DATABASE 
-* MYSQL_USER 
-* MYSQL_PASSWORD 
-* WORDPRESS_DB_NAME 
-* WORDPRESS_DB_USER 
-* WORDPRESS_DB_PASSWORD
+## IDE Configuration
+https://www.jetbrains.com/help/phpstorm/configuring-xdebug.html#integrationWithProduct
 
-##### \* Please not that they must match in order to work. If you change MYSQL_* you need to update WORDPRESS_DB_* accordingly.
-If you want to change the port you can also do it through docker-compose.yml  but you'll have to also update the code in `mu-plugins/mailhog.php`  to match the mailhog smtp port.
+https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html#additional-configuration-options
