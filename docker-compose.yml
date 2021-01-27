@@ -24,7 +24,6 @@ services:
     container_name: local-wordpress-xdebug
     volumes: 
       - ${WORDPRESS_VOLUME}:/var/www/html
-      - ./mu-plugins:/var/www/html/wp-content/mu-plugins
     restart: on-failure:5
     ports:
       - ${WORDPRESS_PORT}:80
