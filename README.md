@@ -1,21 +1,27 @@
-# WordPress Docker Boilerplate
+# WordPress Development Docker Boilerplate
 
-Hi! I'm Jonathan Lafleur and I decided that I would share little gems that I create for my clients that help me develop project for them.  
+This Dockerfile is ready for development purpose only. Please don't use on a production server.  
 
-You'll find in this repo my actual boilerplate that I use to develop WordPress **plugins** & **themes**. It use docker-compose to manage **wordpress (with xdebug)** + **mysql** + **adminer** & **mailhog**.
+With this boilerplate, you'll be able to develop WordPress **plugins** & **themes**. 
 
-If also support `host.docker.internal` on a linux host.
+It use docker-compose to manage **wordpress (with xdebug)** + **mysql** + **adminer** & **mailhog**.
 
-## How to use
-    docker-compose up
-* WordPress: http://localhost:8080
-* Adminer: http://localhost:9090
-* Mailhog: http://localhost:8025
+It also support `host.docker.internal` on a linux host.
+
+For thoses who don't know **mailhog**, it's a service that trap all outgoing email into a web interface, so you can test email on your system and be sure no email will reach any inboxes. 
 
 ## Services Configuration
 All the configuration reside in the **.env** file. if you want to disable wp-debug, remove the key, wordpress image only verify if the key exist and not the value.
 
-## IDE Configuration
-https://www.jetbrains.com/help/phpstorm/configuring-xdebug.html#integrationWithProduct
+## How to use
+    docker-compose up
 
-https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html#additional-configuration-options
+You can access services through (update port with your configuration): 
+* WordPress: http://localhost:8080
+* Adminer: http://localhost:9090
+* Mailhog: http://localhost:8025
+
+## XDebug IDE Configuration
+### PHPStorm
+- https://www.jetbrains.com/help/phpstorm/configuring-xdebug.html#integrationWithProduct
+- https://www.jetbrains.com/help/phpstorm/configuring-remote-interpreters.html#additional-configuration-options
